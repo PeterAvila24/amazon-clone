@@ -1,18 +1,39 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
+import { auth } from './firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+
 
 function Login() {
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate(); 
+
     const signIn = e => {
         e.preventDefault();
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then(authUser => {
+            console.log(authUser);
+            navigate('/');  // Redirect to homepage or another route
+        })
+        .catch(error => alert(error.message));
     }
+
     const register = e => {
         e.preventDefault();
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(authUser => {
+            console.log(authUser);
+              // Redirect to homepage or another route
+        })
+        .catch(error => alert(error.message));
+        
     }
+
 
   return (
     <div className='login'>
