@@ -4,6 +4,10 @@
     margin-bottom: 20px;
 }
 
+.checkoutProduct:hover{
+    transform: scale(1.05);
+}
+
 .checkoutProduct_info{
     padding-left: 20px;
 }

@@ -1,13 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import Product from './Product'
 
 
 function Home() {
+
+  const [imageIndex, setImageIndex] = useState(0);
+  const images = [
+    "https://m.media-amazon.com/images/I/61ijBS0fWUL._SX3000_.jpg",
+    "https://m.media-amazon.com/images/I/61ah8TVW7DL._SX3000_.jpg",
+    "https://m.media-amazon.com/images/I/719baOFMQPL._SX3000_.jpg"
+  ];
+
+  useEffect(() => {
+    console.log("carosul");
+    const interval = setInterval(() => {
+      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+  
   return (
     <div className='home'>
       <div className='home_container'>
-        <img className="home_image" src="https://m.media-amazon.com/images/I/61ijBS0fWUL._SX3000_.jpg" alt=""/>
+        <div className="carousel">
+            {images.map((imageUrl, index) => (
+              <img key={index} className={`carousel_image ${index === imageIndex ? 'active' : ''}`} src={imageUrl} alt=""/> ))}
+        </div>
 
         <div className='home_row'>
           <Product id = "245784" title="Keyboard Lightup" price={29.99} image="https://m.media-amazon.com/images/I/51GBpUxLIcL._MCnd_AC_.jpg" rating={5}/>
