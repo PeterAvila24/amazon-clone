@@ -28,6 +28,7 @@
 
 }
 
-.payment_address{
-    flex-direction: 0.8;
+.payment_address, .payment_items, .payment_details{
+    flex: 0.8;
 }
+

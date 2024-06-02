@@ -1,0 +1,79 @@
+[debug] [2024-06-02T18:42:21.808Z] ----------------------------------------------------------------------
+[debug] [2024-06-02T18:42:21.811Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\avila\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-06-02T18:42:21.811Z] CLI Version:   13.10.0
+[debug] [2024-06-02T18:42:21.812Z] Platform:      win32
+[debug] [2024-06-02T18:42:21.812Z] Node Version:  v20.13.1
+[debug] [2024-06-02T18:42:21.812Z] Time:          Sun Jun 02 2024 13:42:21 GMT-0500 (Central Daylight Time)
+[debug] [2024-06-02T18:42:21.812Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-02T18:42:21.890Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-02T18:42:21.891Z] > authorizing via signed-in user (peteravila622@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2024-06-02T18:42:21.906Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-02T18:42:21.906Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-02T18:42:21.906Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-06-02T18:42:21.909Z] [hub] writing locator at C:\Users\avila\AppData\Local\Temp\hub-challenge-58bbd.json
+[debug] [2024-06-02T18:42:21.925Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-02T18:42:21.926Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-02T18:42:21.926Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2024-06-02T18:42:21.929Z] defaultcredentials: writing to file C:\Users\avila\AppData\Roaming\firebase\peteravila622_gmail_com_application_default_credentials.json
+[debug] [2024-06-02T18:42:21.930Z] Setting GAC to C:\Users\avila\AppData\Roaming\firebase\peteravila622_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\avila\\AppData\\Roaming\\firebase\\peteravila622_gmail_com_application_default_credentials.json"}}
+[debug] [2024-06-02T18:42:21.932Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd/adminSdkConfig [none]
+[debug] [2024-06-02T18:42:22.172Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd/adminSdkConfig 200
+[debug] [2024-06-02T18:42:22.173Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd/adminSdkConfig {"projectId":"challenge-58bbd","storageBucket":"challenge-58bbd.appspot.com"}
+[debug] [2024-06-02T18:42:22.182Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/challenge-58bbd/sites 
+[debug] [2024-06-02T18:42:22.476Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/challenge-58bbd/sites 200
+[debug] [2024-06-02T18:42:22.477Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/challenge-58bbd/sites {"sites":[{"name":"projects/challenge-58bbd/sites/challenge-58bbd","defaultUrl":"https://challenge-58bbd.web.app","appId":"1:932787771795:web:e9da266ac3e30e5c763066","type":"DEFAULT_SITE"}]}
+[debug] [2024-06-02T18:42:22.477Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd/webApps/1:932787771795:web:e9da266ac3e30e5c763066/config [none]
+[debug] [2024-06-02T18:42:22.695Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd/webApps/1:932787771795:web:e9da266ac3e30e5c763066/config 200
+[debug] [2024-06-02T18:42:22.695Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd/webApps/1:932787771795:web:e9da266ac3e30e5c763066/config {"projectId":"challenge-58bbd","appId":"1:932787771795:web:e9da266ac3e30e5c763066","storageBucket":"challenge-58bbd.appspot.com","apiKey":"AIzaSyBUv9rbKzudGZKGLjCN8mQwAU6kwp9jguc","authDomain":"challenge-58bbd.firebaseapp.com","messagingSenderId":"932787771795"}
+[debug] [2024-06-02T18:42:22.699Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd [none]
+[debug] [2024-06-02T18:42:22.853Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd 200
+[debug] [2024-06-02T18:42:22.853Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/challenge-58bbd {"projectId":"challenge-58bbd","projectNumber":"932787771795","displayName":"amazon-challenge","name":"projects/challenge-58bbd","resources":{"hostingSite":"challenge-58bbd"},"state":"ACTIVE","etag":"1_db4f5985-6f79-4518-b4b8-922d04930427"}
+[info] i  hosting[challenge-58bbd]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[challenge-58bbd]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-06-02T18:42:22.868Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-06-02T18:42:22.868Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-06-02T18:42:22.868Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\avila\\.cache\\firebase\\emulators\\ui-v1.12.1\\server\\server.mjs"],"optionalArgs":[],"joinArgs":false,"shell":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\avila\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.12.1\\\\server\\\\server.mjs\"],\"optionalArgs\":[],\"joinArgs\":false,\"shell\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-06-02T18:42:22.998Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-06-02T18:42:22.998Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\Users\avila\Documents\GitHub\Amazon\amazon-clone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\avila\\Documents\\GitHub\\Amazon\\amazon-clone\\functions\" for Cloud Functions..."}}
+[debug] [2024-06-02T18:42:23.089Z] Validating nodejs source
+[debug] [2024-06-02T18:42:24.180Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "stripe": "^15.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-06-02T18:42:24.180Z] Building nodejs source
+[debug] [2024-06-02T18:42:24.180Z] Failed to find version of module node: reached end of search path C:\Users\avila\Documents\GitHub\Amazon\amazon-clone\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-06-02T18:42:24.182Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-06-02T18:42:24.188Z] Found firebase-functions binary at 'C:\Users\avila\Documents\GitHub\Amazon\amazon-clone\functions\node_modules\.bin\firebase-functions'
