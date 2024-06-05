@@ -7,6 +7,8 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from './reducer';
 import axiosInstance from './axios';
+import { db } from "./firebase";
+import { doc, setDoc, collection } from 'firebase/firestore';
 
 
 function Payment() {
@@ -43,24 +45,45 @@ function Payment() {
     getClientSecret();
   }, [basket]);
 
-  console.log('The sc=ecret', clientSecret);
+  console.log('The scecret is >>>', clientSecret);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
+    try {
+      const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+      });
+  
+      if (error) {
+        setError(`Payment failed: ${error.message}`);
+        setProcessing(false);
+      } else {
+        
+        const ordersRef = collection(db, 'users', user?.uid, 'orders');
+        const orderDoc = doc(ordersRef, paymentIntent.id);
+        await setDoc(orderDoc, {
+          basket: basket,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created,
+        });
 
-    const payload = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement)
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+  
+        dispatch({
+          type: 'EMPTY_BASKET',
+        });
+        navigate('/orders');
       }
-    }).then(({ paymentIntent }) => {
-      setSucceeded(true);
-      setError(null)
-      setProcessing(false)
-
-      navigate('/orders', { replace: true });
-    })
-  }
+    } catch (err) {
+      setError(`Payment failed: ${err.message}`);
+      setProcessing(false);
+    }
+  };
 
   const handleChange = event => {
 
@@ -106,7 +129,7 @@ function Payment() {
           </div>
           <div className='payment_details'>
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange}/>
 
               <div className='payment_priceContainer'>

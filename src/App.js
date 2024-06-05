@@ -5,6 +5,7 @@ import Home from "./Home";
 import {BrowserRouter as Router , Routes, Route, useLocation} from "react-router-dom";
 import Checkout from "./Checkout"
 import Login from "./Login";
+import Orders from "./Orders";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
@@ -41,6 +42,7 @@ function App() {
       <div className="app">
         <ConditionalHeader/>
         <Routes>
+          <Route path="/orders" element={<Orders/>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/checkout" element={ <Checkout/> }/>
           <Route path="/payment" element={ 
